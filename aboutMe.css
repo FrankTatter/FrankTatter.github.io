@@ -1,0 +1,11 @@
+.container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+img{
+    width: 100%;
+    aspect-ratio: 5/4;
+    object-fit: cover;
+    border-radius: 20px;
+}
