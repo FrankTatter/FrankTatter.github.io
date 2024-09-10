@@ -88,7 +88,7 @@ if (objToRender === "ramenShop") {
     controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.12;
-    controls.maxPolarAngle = Math.PI/2; 
+    controls.maxPolarAngle = Math.PI*4/9; 
 }
 
 let x;
