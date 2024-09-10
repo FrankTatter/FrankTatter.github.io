@@ -88,7 +88,8 @@ if (objToRender === "ramenShop") {
     controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.12;
-    controls.maxPolarAngle = Math.PI*4/9; 
+    controls.maxPolarAngle = Math.PI*4/9;
+    controls.maxDistance = 50;
 }
 
 let x;
@@ -128,12 +129,14 @@ function onClick(event) {
 
 
 function onTouch(event) {
-    obj = getFirstObjectWithName(event, window, camera, scene);
+    obj = getFirstObjectWithNameTouch(event, camera, scene);
 
-    if(obj == "chair3"){
+    if(obj == "Torus004_1"){
         // true for mobile device
-        camera.position.set(2 ,3.3, 5.3);
-        camera.rotation.set(-1.5 , 0, 0);
+        x=false;
+        gsap.to(camera.position, {x:2.05, y:4.3, z:5.3, duration: 0.5});
+        gsap.to(camera.rotation, {x: -1.5, y: 0, z: 0, duration: 0.5, ease:"none"});
+        document.addEventListener('click', onClick);
         controls.enabled = false;
     }
 }
@@ -147,7 +150,32 @@ export function getFirstObjectWithName(event, window, camera, scene){
     const mousePointer = getMouseVector2(event, window);
 	const intersections = checkRayIntersections(mousePointer, camera, raycaster, scene, getFirstValue);
 
+
     return(intersections[0].object.name);
+}
+
+export function getFirstObjectWithNameTouch(event, camera, scene){
+    
+    const raycaster = new THREE.Raycaster();
+    const getFirstValue = true;
+
+    const touchPointer = getTouchVector2(event);
+	const intersections = checkRayIntersections(touchPointer, camera, raycaster, scene, getFirstValue);
+
+    return(intersections[0].object.name);
+}
+
+export function getTouchVector2(event){
+    let touchPointer = new THREE.Vector2()
+
+    event.preventDefault();
+	event = event.changedTouches[ 0 ];
+    var rect = renderer.domElement.getBoundingClientRect();
+
+    touchPointer.x = ( ( event.clientX - rect.left) / rect.width) * 2 - 1;
+	touchPointer.y = - ( ( event.clientY - rect.top) / rect.height) * 2 + 1;
+
+    return touchPointer;
 }
 
 export function getMouseVector2(event, window){
@@ -155,6 +183,7 @@ export function getMouseVector2(event, window){
 
     mousePointer.x = (event.clientX / window.innerWidth) * 2 - 1;
 	mousePointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    console.log(mousePointer);
 
     return mousePointer;
 }
@@ -177,11 +206,10 @@ document.body.onkeyup = function(e) {
         e.keyCode == 32      
     ) {
         x=false;
-        camera.rotation.set(-1.5 , 0, 0);
-        camera.position.set(2 ,3.3, 5.3);
+        gsap.to(camera.position, {x:2, y:3.3, z:5.3, duration: 0.5});
+        gsap.to(camera.rotation, {x: -1.5, y: 0, z: 0, duration: 0.5, ease:"none"});
         document.addEventListener('click', onClick);
         controls.enabled = false;
-        console.log(camera.position, camera.rotation);
     }
 
     if (e.keyCode == 27 
@@ -200,3 +228,4 @@ document.body.onkeyup = function(e) {
 
 //Start the 3D rendering
 animate();
+
