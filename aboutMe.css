@@ -27,7 +27,7 @@ html{
 }
 .about{
     position: relative;
-    left: 10px;
+    left: 20px;
     font-size: 3rem;
 }
 .name{
@@ -93,7 +93,7 @@ html{
 .meGuitar{
     position: absolute;
     left: 40%;
-    top: 100px;
+    top: 125px;
     aspect-ratio: 4/5;
     width: 50%;
     object-fit: cover;
@@ -101,8 +101,8 @@ html{
 }
 .text2{
     position: relative;
-    top: 18%;
-    left: 35%;
+    top: 5%;
+    left: 15%;
     width: 60%;
     font-size: 1.5em;
 }
@@ -112,18 +112,21 @@ html{
     width: 40px;
 }
 .tripPhotos{
+    top: 8%;
     position: relative;
+    bottom: 2%;
+    margin-bottom: 2%;
 }
 .text3{
     position: relative;
-    top: 30%;
-    left: 20%;
+    top: 10%;
+    left: 25%;
     width: 60%;
     font-size: 1.5em;
 }
 .cvButton{
     position: relative;
-    top: 30%;
+    top: 10%;
     left: 60%;
     width: 100px;
     height: 20px;
