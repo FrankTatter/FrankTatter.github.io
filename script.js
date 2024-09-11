@@ -119,8 +119,17 @@ let newUrl;
 function onClick(event) {
     obj = getFirstObjectWithName(event, window, camera, scene);
 
+    if(obj == "Torus004_1"){
+        // true for mobile device
+        x=false;
+        gsap.to(camera.position, {x:2.05, y:3.3, z:5.3, duration: 0.5});
+        gsap.to(camera.rotation, {x: -1.5, y: 0, z: 0, duration: 0.5, ease:"none"});
+        document.addEventListener('click', onClick);
+        controls.enabled = false;
+    }
+
     // false for not mobile device
-    if (obj == "1" ||obj == "2" ||obj == "3" ||obj == "4" ||obj == "5" ||obj == "6" ||obj == "7" ||obj == "8" ||obj == "9"||obj == "aboutMe") {
+    if ((obj == "1" ||obj == "2" ||obj == "3" ||obj == "4" ||obj == "5" ||obj == "6" ||obj == "7" ||obj == "8" ||obj == "9"||obj == "aboutMe") && x == false) {
         console.log(obj);
         newUrl = "https://franktatter.github.io/"+obj+".html"
         window.location.replace(newUrl);
@@ -200,22 +209,25 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
     document.addEventListener('touchstart', onTouch);
 }
 
+
+document.addEventListener('click', onClick);
+
 document.body.onkeyup = function(e) {
     if (e.key == " " ||
         e.code == "Space" ||      
         e.keyCode == 32      
     ) {
-        x=false;
-        gsap.to(camera.position, {x:2, y:3.3, z:5.3, duration: 0.5});
-        gsap.to(camera.rotation, {x: -1.5, y: 0, z: 0, duration: 0.5, ease:"none"});
-        document.addEventListener('click', onClick);
-        controls.enabled = false;
+        // x=false;
+        // gsap.to(camera.position, {x:2, y:3.3, z:5.3, duration: 0.5});
+        // gsap.to(camera.rotation, {x: -1.5, y: 0, z: 0, duration: 0.5, ease:"none"});
+        // document.addEventListener('click', onClick);
+        // controls.enabled = false;
     }
 
     if (e.keyCode == 27 
     ) {
         x=true;
-        document.removeEventListener('click', onClick);
+        //document.removeEventListener('click', onClick);
         controls.enabled = true;
     }
 
