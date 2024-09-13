@@ -87,7 +87,7 @@ scene.add(spotLight, spotLight1, spotLight2, spotLight3);
 if (objToRender === "ramenShop") {
     controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
-    controls.dampingFactor = 0.12;
+    controls.dampingFactor = 0.2;
     controls.maxPolarAngle = Math.PI*4/9;
     controls.maxDistance = 50;
 }
