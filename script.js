@@ -143,7 +143,7 @@ function onClick(event) {
     else if ((obj == "discoveryEducation" ||obj == "Text005" ||obj == "Text016"||obj == "Text014") && x == false) {
         console.log(obj);
         newUrl = "https://franktatter.github.io/discoveryEducation.html"
-        //window.location.replace(newUrl);
+        window.location.replace(newUrl);
     }
     else if ((obj == "aboutMe" ||obj == "Text") && x == false) {
         console.log(obj);
