@@ -73,11 +73,53 @@ html{
 .seccondSection{
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 60% 40%;
+    grid-auto-columns: 40% 60%;
 }
 .woksForDinnerContainer{
-    width: 100%;
-    aspect-ratio: 4/5;
+    position: relative;
+    left: 10%;
+    width: 60%;
+    box-shadow:10px 10px #bfbfbf;
     object-fit: cover;
     border-radius: 20px;
+}
+.p1{
+    position: relative;
+    top: 10%;
+    left: 15%;
+    width: 70%;
+    font-size: 1.25rem;
+}
+.productPageWFD{
+    position: relative;
+    top: 30%;
+    margin-bottom: 10%;
+    left: 10%;
+    width: 90%;
+    box-shadow:10px 10px #bfbfbf;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.p2{
+    position: relative;
+    top: 10%;
+    left: 15%;
+    width: 60%;
+    font-size: 1.25rem;
+}
+.accountPageWFD{
+    position: relative;
+    top: 15%;
+    left: 10%;
+    width: 60%;
+    box-shadow:10px 10px #bfbfbf;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.p3{
+    position: relative;
+    top: 35%;
+    left: 15%;
+    width: 60%;
+    font-size: 1.25rem;
 }
