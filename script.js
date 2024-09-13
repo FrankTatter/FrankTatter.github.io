@@ -127,11 +127,27 @@ function onClick(event) {
         document.addEventListener('click', onClick);
         controls.enabled = false;
     }
+    console.log(obj);
 
     // false for not mobile device
-    if ((obj == "1" ||obj == "2" ||obj == "3" ||obj == "4" ||obj == "5" ||obj == "6" ||obj == "7" ||obj == "8" ||obj == "9"||obj == "aboutMe") && x == false) {
+    if ((obj == "wokLogo003_1" ||obj == "woksForDinner001" ||obj == "woksForDinner002"||obj == "woksForDinner003"||obj == "wokLogo003") && x == false) {
         console.log(obj);
-        newUrl = "https://franktatter.github.io/"+obj+".html"
+        newUrl = "https://franktatter.github.io/woksForDinner.html"
+        window.location.replace(newUrl);
+    }
+    else if ((obj == "Text006" ||obj == "Text018" ||obj == "Text017"||obj == "cyberThreatAwareness") && x == false) {
+        console.log(obj);
+        newUrl = "https://franktatter.github.io/cyberThreatAwareness.html"
+        //window.location.replace(newUrl);
+    }
+    else if ((obj == "discoveryEducation" ||obj == "Text005" ||obj == "Text016"||obj == "Text014") && x == false) {
+        console.log(obj);
+        newUrl = "https://franktatter.github.io/discoveryEducation.html"
+        //window.location.replace(newUrl);
+    }
+    else if ((obj == "aboutMe" ||obj == "Text") && x == false) {
+        console.log(obj);
+        newUrl = "https://franktatter.github.io/aboutMe.html"
         window.location.replace(newUrl);
     }
 }
