@@ -1,0 +1,83 @@
+@font-face{
+    font-family: Modernist;
+    src: url(font/Regular_Weight_Desktop/Sk-Modernist-Regular.otf);
+}
+html{
+    font-family: Modernist;
+    background-color: #fefcf5;
+    overflow-x: hidden;
+}
+.arrow{
+    position: relative;
+    top: 10px;
+    padding-right: 10px;
+    aspect-ratio: 1/1;
+    width: 30px;
+}
+.returnButton{
+    background-color: #E5E4E2;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    margin-left: 5%;
+    border-radius: 20px;
+}
+.returnLink{
+    text-decoration: none;
+    width: 200px;
+    height: 40px;
+    background-color: blue;
+}
+.returnTxt{
+    text-decoration: none;
+    margin-top: 0;
+    width: 200px;
+    color: black;
+    font-size: 1.25rem;
+}
+.topSection{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 30% 70%;
+}
+.woksForDinnerLogo{
+    width: 100%;
+}
+.titleText{
+    font-size: 5rem;
+    margin-bottom: 2%;
+}
+.stats{
+    position: relative;
+    left: 5%;
+    width: 70%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 15% 85%;
+}
+.Year{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.languages{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.description{
+    position: relative;
+    left: 15%;
+    width: 70%;
+    font-size: 1.25rem;
+}
+.seccondSection{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 60% 40%;
+}
+.woksForDinnerContainer{
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 20px;
+}
