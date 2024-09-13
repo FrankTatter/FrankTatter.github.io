@@ -138,7 +138,7 @@ function onClick(event) {
     else if ((obj == "Text006" ||obj == "Text018" ||obj == "Text017"||obj == "cyberThreatAwareness") && x == false) {
         console.log(obj);
         newUrl = "https://franktatter.github.io/cyberThreatAwareness.html"
-        //window.location.replace(newUrl);
+        window.location.replace(newUrl);
     }
     else if ((obj == "discoveryEducation" ||obj == "Text005" ||obj == "Text016"||obj == "Text014") && x == false) {
         console.log(obj);
