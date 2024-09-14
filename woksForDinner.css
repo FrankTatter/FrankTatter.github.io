@@ -123,3 +123,20 @@ html{
     width: 60%;
     font-size: 1.25rem;
 }
+.TikTok{
+    position: relative;
+    top: 45%;
+    margin-bottom: 10%;
+    left: 10%;
+    width: 90%;
+    box-shadow:10px 10px #bfbfbf;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.p4{
+    position: relative;
+    top: 20%;
+    left: 15%;
+    width: 60%;
+    font-size: 1.25rem;
+}
