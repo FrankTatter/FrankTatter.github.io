@@ -71,72 +71,70 @@ html{
     font-size: 1.25rem;
 }
 .seccondSection{
+    margin-left: 5%;
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 40% 60%;
 }
 .woksForDinnerContainer{
-    position: relative;
-    left: 10%;
     width: 60%;
     box-shadow:10px 10px #bfbfbf;
     object-fit: cover;
     border-radius: 20px;
 }
 .p1{
-    position: relative;
-    top: 10%;
-    left: 15%;
+    margin-left: 20%;
+    margin-top: 30%;
     width: 70%;
     font-size: 1.25rem;
 }
 .productPageWFD{
-    position: relative;
-    top: 30%;
-    margin-bottom: 10%;
-    left: 10%;
+    margin-top: 30%;
     width: 90%;
     box-shadow:10px 10px #bfbfbf;
     object-fit: cover;
     border-radius: 20px;
 }
 .p2{
-    position: relative;
-    top: 10%;
-    left: 15%;
-    width: 60%;
+    margin-top: 10%;
+    width: 50%;
     font-size: 1.25rem;
 }
 .accountPageWFD{
-    position: relative;
-    top: 15%;
-    left: 10%;
+    margin-top: 10%;
     width: 60%;
     box-shadow:10px 10px #bfbfbf;
     object-fit: cover;
     border-radius: 20px;
 }
 .p3{
-    position: relative;
-    top: 35%;
-    left: 15%;
+    margin-left: 20%;
+    margin-top: 20%;
     width: 60%;
     font-size: 1.25rem;
 }
-.TikTok{
-    position: relative;
-    top: 45%;
-    margin-bottom: 10%;
-    left: 10%;
+.Chat{
+    margin-top: 20%;
     width: 90%;
     box-shadow:10px 10px #bfbfbf;
     object-fit: cover;
     border-radius: 20px;
 }
 .p4{
-    position: relative;
-    top: 20%;
-    left: 15%;
+    margin-top: 10%;
+    width: 50%;
+    font-size: 1.25rem;
+}
+.TikTok{
+    margin-top: 10%;
+    width: 60%;
+    box-shadow:10px 10px #bfbfbf;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.p5{
+    margin-left: 20%;
+    margin-top: 20%;
     width: 60%;
     font-size: 1.25rem;
 }
