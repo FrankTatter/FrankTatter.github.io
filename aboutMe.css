@@ -2,133 +2,260 @@
     font-family: Modernist;
     src: url(font/Regular_Weight_Desktop/Sk-Modernist-Regular.otf);
 }
-@keyframes picOfMe{
-    0%{width: 0.5%;}
-    40%{width: 80%;}
+@media screen and (max-width: 480px) {
+    html{
+        width: 100%;
+        overflow-x: clip;
+    }
+    .All{
+        width: 100%;
+        display: block;
+    }
+    .Container{
+        display: none;
+    }
+    .picOfMe{
+        margin-left: 5%;
+        width: 80%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .about{
+        position: relative;
+        left: 35px;
+        font-size: 1.5rem;
+    }
+    .name{
+        margin: 0;
+        top: -40px;
+        position: relative;
+        font-size: 3.5rem;
+    }
+    .arrow{
+        position: relative;
+        top: 10px;
+        padding-right: 10px;
+        aspect-ratio: 1/1;
+        width: 30px;
+    }
+    .returnButton{
+        background-color: #E5E4E2;
+        margin: 10px;
+        padding: 10px;
+        width: 200px;
+        height: 40px;
+        margin-left: 5%;
+        border-radius: 20px;
+    }
+    .returnLink{
+        text-decoration: none;
+        width: 200px;
+        height: 40px;
+    }
+    .returnTxt{
+        text-decoration: none;
+        margin-top: 0;
+        width: 200px;
+        color: black;
+        font-size: 1.25rem;
+    }
+    .opening{
+        margin-bottom: 10%;
+        width: 75%;
+        font-size: 1rem;
+        margin-left: 10%;
+    }
+    .meCooking{
+        position: relative;
+        aspect-ratio: 4/5;
+        width: 50%;
+        object-fit: cover;
+        border-radius: 20px;
+        left: 2%;
+        transform: rotate(-60deg);
+    }
+    .meWalking{
+        position: relative;
+        left: -30%;
+        aspect-ratio: 4/5;
+        width: 50%;
+        object-fit: cover;
+        border-radius: 20px;
+        transform: rotate(-30deg);
+    }
+    .meGuitar{
+        position: relative;
+        left: -60%;
+        aspect-ratio: 4/5;
+        width: 50%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .text2{
+        position: relative;
+        left: 15%;
+        width: 60%;
+        font-size: 1em;
+    }
+    .dot{
+        position: relative;
+        aspect-ratio: 1/1;
+        width: 40px;
+    }
+    .tripPhotos{
+        max-width: max-content;
+        max-height:fit-content;
+        display: flex;
+        position: relative;
+        margin-bottom: 8%;
+        margin-left: 10%;
+    }
+    .text3{
+        position: relative;
+        top: 10%;
+        left: 25%;
+        width: 60%;
+        font-size: 1em;
+    }
+    .cvButton{
+        position: relative;
+        top: 10%;
+        left: 60%;
+        width: 100px;
+        height: 20px;
+        border-radius: 20px;
+    }
+    
 }
 html{
     font-family: Modernist;
     background-color: #fefcf5;
-    overflow-x: hidden;
 }
-.container{
-    display: grid;
-    grid-template-columns: 50% 50%;
-
-}
-.picOfMe{
-    margin-left: 5%;
-    width: 80%;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-    border-radius: 20px;
-    animation-name: picOfMe;
-    animation-duration: 4s;
-}
-.about{
-    position: relative;
-    left: 20px;
-    font-size: 3rem;
-}
-.name{
-    margin: 0;
-    position: relative;
-    top: -100px;
-    left: -70px;
-    font-size: 9rem;
-}
-.arrow{
-    position: relative;
-    top: 10px;
-    padding-right: 10px;
-    aspect-ratio: 1/1;
-    width: 30px;
-}
-.returnButton{
-    background-color: #E5E4E2;
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
-    height: 40px;
-    margin-left: 5%;
-    border-radius: 20px;
-}
-.returnLink{
-    text-decoration: none;
-    width: 200px;
-    height: 40px;
-    background-color: blue;
-}
-.returnTxt{
-    text-decoration: none;
-    margin-top: 0;
-    width: 200px;
-    color: black;
-    font-size: 1.25rem;
-}
-.opening{
-    width: 75%;
-    font-size: 1.5rem;
-}
-.meCooking{
-    position: absolute;
-    aspect-ratio: 4/5;
-    width: 50%;
-    object-fit: cover;
-    border-radius: 20px;
-    left: 2%;
-    top: 70px;
-    transform: rotate(-60deg);
-}
-.meWalking{
-    position: absolute;
-    left: 22%;
-    top: 55px;
-    aspect-ratio: 4/5;
-    width: 50%;
-    object-fit: cover;
-    border-radius: 20px;
-    transform: rotate(-30deg);
-}
-.meGuitar{
-    position: absolute;
-    left: 40%;
-    top: 125px;
-    aspect-ratio: 4/5;
-    width: 50%;
-    object-fit: cover;
-    border-radius: 20px;
-}
-.text2{
-    position: relative;
-    top: 5%;
-    left: 15%;
-    width: 60%;
-    font-size: 1.5em;
-}
-.dot{
-    position: relative;
-    aspect-ratio: 1/1;
-    width: 40px;
-}
-.tripPhotos{
-    top: 8%;
-    position: relative;
-    bottom: 2%;
-    margin-bottom: 2%;
-}
-.text3{
-    position: relative;
-    top: 10%;
-    left: 25%;
-    width: 60%;
-    font-size: 1.5em;
-}
-.cvButton{
-    position: relative;
-    top: 10%;
-    left: 60%;
-    width: 100px;
-    height: 20px;
-    border-radius: 20px;
+@media screen and (min-width: 480px){
+    .All{
+        display: none;
+    }
+    .Container{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    
+    }
+    .picOfMe{
+        margin-left: 5%;
+        width: 80%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .about{
+        position: relative;
+        left: 20px;
+        font-size: 3rem;
+    }
+    .name{
+        margin: 0;
+        position: relative;
+        top: -100px;
+        left: -70px;
+        font-size: 9rem;
+    }
+    .arrow{
+        position: relative;
+        top: 10px;
+        padding-right: 10px;
+        aspect-ratio: 1/1;
+        width: 30px;
+    }
+    .returnButton{
+        background-color: #E5E4E2;
+        margin: 10px;
+        padding: 10px;
+        width: 200px;
+        height: 40px;
+        margin-left: 5%;
+        border-radius: 20px;
+    }
+    .returnLink{
+        text-decoration: none;
+        width: 200px;
+        height: 40px;
+        background-color: blue;
+    }
+    .returnTxt{
+        text-decoration: none;
+        margin-top: 0;
+        width: 200px;
+        color: black;
+        font-size: 1.25rem;
+    }
+    .opening{
+        position: relative;
+        left: 15%;
+        width: 75%;
+        font-size: 1.5rem;
+    }
+    .meCooking{
+        position: absolute;
+        aspect-ratio: 4/5;
+        width: 50%;
+        object-fit: cover;
+        border-radius: 20px;
+        left: 2%;
+        top: 70px;
+        transform: rotate(-60deg);
+    }
+    .meWalking{
+        position: absolute;
+        left: 22%;
+        top: 55px;
+        aspect-ratio: 4/5;
+        width: 50%;
+        object-fit: cover;
+        border-radius: 20px;
+        transform: rotate(-30deg);
+    }
+    .meGuitar{
+        position: absolute;
+        left: 40%;
+        top: 125px;
+        aspect-ratio: 4/5;
+        width: 50%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .text2{
+        position: relative;
+        top: 5%;
+        left: 15%;
+        width: 60%;
+        font-size: 1.5em;
+    }
+    .dot{
+        position: relative;
+        aspect-ratio: 1/1;
+        width: 40px;
+    }
+    .tripPhotos{
+        left: 10%;
+        top: 8%;
+        position: relative;
+        bottom: 2%;
+        margin-bottom: 2%;
+    }
+    .text3{
+        position: relative;
+        top: 10%;
+        left: 25%;
+        width: 60%;
+        font-size: 1.5em;
+    }
+    .cvButton{
+        position: relative;
+        top: 10%;
+        left: 60%;
+        width: 100px;
+        height: 20px;
+        border-radius: 20px;
+    }
 }
