@@ -31,110 +31,213 @@ html{
 }
 .returnTxt{
     text-decoration: none;
+    margin-left: 0;
     margin-top: 0;
     width: 200px;
     color: black;
     font-size: 1.25rem;
 }
-.topSection{
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 30% 70%;
+@media screen and (max-width:480px){
+    .all{
+        display: block;
+    }
+    .topSection{
+        display: none;
+    }
+    .topSectionA{
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 30% 70%;
+    }
+    .woksForDinnerLogo{
+        width: 100%;
+        margin-top: 20%;
+    }
+    .titleText{
+        font-size: 3rem;
+        margin: 0;
+    }
+    .stats{
+        position: relative;
+        left: 5%;
+        width: 90%;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: fit-content fit-content;
+    }
+    .Year{
+        font-size: 0.75rem;
+        font-weight: bold;
+    }
+    .languages{
+        width: 100%;
+        margin-left: 0;
+        font-size: 0.75rem;
+        font-weight: bold;
+    }
+    .description{
+        position: relative;
+        margin-left: 15%;
+        width: 70%;
+        font-size: 1rem;
+    }
+    .seccondSection{
+        margin-left: 5%;
+        display: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 40% 60%;
+    }
+    .woksForDinnerContainer{
+        width: 90%;
+        margin-left: 5%;
+        box-shadow:10px 10px #bfbfbf;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    p{
+        text-align: center;
+        margin-left: 10%;
+        width: 80%;
+        font-size: 1rem;
+    }
+    .productPageWFD{
+        margin-left: 5%;
+        width: 90%;
+        box-shadow:10px 10px #bfbfbf;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .accountPageWFD{
+        margin-left: 5%;
+        width: 90%;
+        box-shadow:10px 10px #bfbfbf;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .Chat{
+        margin-left: 5%;
+        width: 90%;
+        box-shadow:10px 10px #bfbfbf;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .TikTok{
+        margin-left: 5%;
+        width: 90%;
+        box-shadow:10px 10px #bfbfbf;
+        object-fit: cover;
+        border-radius: 20px;
+    }
 }
-.woksForDinnerLogo{
-    width: 100%;
-}
-.titleText{
-    font-size: 5rem;
-    margin-bottom: 2%;
-}
-.stats{
-    position: relative;
-    left: 5%;
-    width: 70%;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 15% 85%;
-}
-.Year{
-    font-size: 1rem;
-    font-weight: bold;
-}
-.languages{
-    font-size: 1rem;
-    font-weight: bold;
-}
-.description{
-    position: relative;
-    left: 15%;
-    width: 70%;
-    font-size: 1.25rem;
-}
-.seccondSection{
-    margin-left: 5%;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 40% 60%;
-}
-.woksForDinnerContainer{
-    width: 60%;
-    box-shadow:10px 10px #bfbfbf;
-    object-fit: cover;
-    border-radius: 20px;
-}
-.p1{
-    margin-left: 20%;
-    margin-top: 30%;
-    width: 70%;
-    font-size: 1.25rem;
-}
-.productPageWFD{
-    margin-top: 30%;
-    width: 90%;
-    box-shadow:10px 10px #bfbfbf;
-    object-fit: cover;
-    border-radius: 20px;
-}
-.p2{
-    margin-top: 10%;
-    width: 50%;
-    font-size: 1.25rem;
-}
-.accountPageWFD{
-    margin-top: 10%;
-    width: 60%;
-    box-shadow:10px 10px #bfbfbf;
-    object-fit: cover;
-    border-radius: 20px;
-}
-.p3{
-    margin-left: 20%;
-    margin-top: 20%;
-    width: 60%;
-    font-size: 1.25rem;
-}
-.Chat{
-    margin-top: 20%;
-    width: 90%;
-    box-shadow:10px 10px #bfbfbf;
-    object-fit: cover;
-    border-radius: 20px;
-}
-.p4{
-    margin-top: 10%;
-    width: 50%;
-    font-size: 1.25rem;
-}
-.TikTok{
-    margin-top: 10%;
-    width: 60%;
-    box-shadow:10px 10px #bfbfbf;
-    object-fit: cover;
-    border-radius: 20px;
-}
-.p5{
-    margin-left: 20%;
-    margin-top: 20%;
-    width: 60%;
-    font-size: 1.25rem;
+@media screen and (min-width:481px){
+    .all{
+        display: none;
+    }
+    .topSection{
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 30% 70%;
+    }
+    .topSectionA{
+        display: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 30% 70%;
+    }
+    .woksForDinnerLogo{
+        width: 100%;
+    }
+    .titleText{
+        font-size: 5rem;
+        margin-bottom: 2%;
+    }
+    .stats{
+        position: relative;
+        left: 5%;
+        width: 70%;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 15% 85%;
+    }
+    .Year{
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    .languages{
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    .description{
+        position: relative;
+        left: 15%;
+        width: 70%;
+        font-size: 1.25rem;
+    }
+    .seccondSection{
+        margin-left: 5%;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 40% 60%;
+    }
+    .woksForDinnerContainer{
+        width: 60%;
+        box-shadow:10px 10px #bfbfbf;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .p1{
+        margin-left: 20%;
+        margin-top: 30%;
+        width: 70%;
+        font-size: 1.25rem;
+    }
+    .productPageWFD{
+        margin-top: 30%;
+        width: 90%;
+        box-shadow:10px 10px #bfbfbf;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .p2{
+        margin-top: 10%;
+        width: 50%;
+        font-size: 1.25rem;
+    }
+    .accountPageWFD{
+        margin-top: 10%;
+        width: 60%;
+        box-shadow:10px 10px #bfbfbf;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .p3{
+        margin-left: 20%;
+        margin-top: 20%;
+        width: 60%;
+        font-size: 1.25rem;
+    }
+    .Chat{
+        margin-top: 20%;
+        width: 90%;
+        box-shadow:10px 10px #bfbfbf;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .p4{
+        margin-top: 10%;
+        width: 50%;
+        font-size: 1.25rem;
+    }
+    .TikTok{
+        margin-top: 10%;
+        width: 60%;
+        box-shadow:10px 10px #bfbfbf;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .p5{
+        margin-left: 20%;
+        margin-top: 20%;
+        width: 60%;
+        font-size: 1.25rem;
+    }
 }
