@@ -9,7 +9,7 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 const scene = new THREE.Scene();
 //create a new camera with positions and angles
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(8,11,18);
+camera.position.set(40,20,-22);
 
 // create a global object
 let object;
@@ -56,17 +56,17 @@ scene.add(ambientLight);
 
 // spot lights
 
-const spotLight1 = new THREE.SpotLight(0xeeaf61, 1, 60, Math.PI / 8, 0);
-spotLight1.position.set(-10, 30, 30);
-spotLight1.castShadow = true;
-const spotLightHelper1 = new THREE.SpotLightHelper(spotLight1);
-//scene.add(spotLight1, spotLightHelper1);
-
 const spotLight = new THREE.SpotLight(0xFA5F55, 1, 60, Math.PI / 8, 0);
 spotLight.position.set(-20, 30, 30);
 spotLight.castShadow = true;
 const spotLightHelper = new THREE.SpotLightHelper(spotLight);
 //scene.add(spotLight, spotLightHelper);
+
+const spotLight1 = new THREE.SpotLight(0xeeaf61, 1, 60, Math.PI / 8, 0);
+spotLight1.position.set(-10, 30, 30);
+spotLight1.castShadow = true;
+const spotLightHelper1 = new THREE.SpotLightHelper(spotLight1);
+//scene.add(spotLight1, spotLightHelper1);
 
 const spotLight2 = new THREE.SpotLight(0xffffff, 1, 80, Math.PI / 8, 0);
 spotLight2.position.set(0, -50, 0);
@@ -82,10 +82,10 @@ const spotLightHelper3 = new THREE.SpotLightHelper(spotLight3);
 
 scene.add(spotLight, spotLight1, spotLight2, spotLight3);
 
-
 //This adds controls to the camera, so we can rotate / zoom it with the mouse
 if (objToRender === "ramenShop") {
     controls = new OrbitControls(camera, renderer.domElement);
+    controls.mouseButtons.RIGHT = THREE.MOUSE.ROTATE;
     controls.enableDamping = true;
     controls.dampingFactor = 0.2;
     controls.maxPolarAngle = Math.PI*4/9;
@@ -115,11 +115,12 @@ window.addEventListener("resize", function () {
 
 let obj; 
 let newUrl;
+let posterSelected = false;
 
 function onClick(event) {
     obj = getFirstObjectWithName(event, window, camera, scene);
 
-    if(obj == "Torus004_1"){
+    if(obj == "Torus004_1"){ 
         // true for mobile device
         x=false;
         gsap.to(camera.position, {x:2.05, y:3.3, z:5.3, duration: 0.5});
@@ -149,6 +150,40 @@ function onClick(event) {
         console.log(obj);
         newUrl = "https://franktatter.github.io/aboutMe.html"
         window.location.replace(newUrl);
+    }
+    else if ((obj == "exit" ||obj == "Text008") && x == false) {
+        console.log(obj);
+        x=true;
+       //document.removeEventListener('click', onClick);
+        controls.enabled = true;
+        gsap.to(camera.position, {x:8, y:11, z:25, duration: 1});
+    }
+    else if (obj == "poster1" && posterSelected == false) {
+        posterSelected=true;
+        controls.enabled = false;
+        console.log(obj);
+        console.log(scene.children[5].children[32])
+        gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
+        gsap.to(scene.children[5].children[32].position, {x:0, y:1, z:-4.5, duration: 1});
+        gsap.to(scene.children[5].children[32].rotation, {x:0, y:0, z:0, duration: 1});
+    }
+    else if (obj == "poster2" && posterSelected == false) {
+        posterSelected=true;
+        controls.enabled = false;
+        console.log(obj);
+        console.log(scene.children[5].children[33])
+        gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
+        gsap.to(scene.children[5].children[33].position, {x:0, y:1, z:-4.5, duration: 1});
+        gsap.to(scene.children[5].children[33].rotation, {x:0, y:0, z:0, duration: 1});
+    }
+    else if (obj == "poster3" && posterSelected == false) {
+        posterSelected=true;
+        controls.enabled = false;
+        console.log(obj);
+        console.log(scene.children[5].children[34])
+        gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
+        gsap.to(scene.children[5].children[34].position, {x:0, y:1, z:-4.5, duration: 1});
+        gsap.to(scene.children[5].children[34].rotation, {x:0, y:0, z:0, duration: 1});
     }
 }
 
@@ -233,6 +268,8 @@ document.body.onkeyup = function(e) {
         e.code == "Space" ||      
         e.keyCode == 32      
     ) {
+        
+        //console.log(camPos);
         // x=false;
         // gsap.to(camera.position, {x:2, y:3.3, z:5.3, duration: 0.5});
         // gsap.to(camera.rotation, {x: -1.5, y: 0, z: 0, duration: 0.5, ease:"none"});
@@ -242,18 +279,45 @@ document.body.onkeyup = function(e) {
 
     if (e.keyCode == 27 
     ) {
-        x=true;
-        //document.removeEventListener('click', onClick);
-        controls.enabled = true;
+        if (posterSelected){
+            posterSelected = false
+            controls.enabled = true;
+            gsap.to(camera.position, {x:0, y:5, z:-20, duration: 0.5});
+            //poster 1
+            gsap.to(scene.children[5].children[32].position, {x:1.4462063312530518, y:1.2948734760284424, z:-1.5894981622695923, duration: 0.5});
+            gsap.to(scene.children[5].children[32].rotation, {x:0, y:0, z:-0.14900684876465822, duration: 0.5});
+            //poster2
+            gsap.to(scene.children[5].children[33].position, {x:0.6585921049118042, y:1.4721720218658447, z:-1.5894981622695923, duration: 0.5});
+            gsap.to(scene.children[5].children[33].rotation, {x:0, y:0, z:0.2617685261862562, duration: 0.5});
+            //poster 3
+            gsap.to(scene.children[5].children[34].position, {x:-0.054011255502700806, y:1.0971174240112305, z:-1.5894981622695923, duration: 0.5});
+            gsap.to(scene.children[5].children[34].rotation, {x:0, y:0, z:0.006877208719303045, duration: 0.5});
+        }else{
+            x=true;
+       
+            //document.removeEventListener('click', onClick);
+            controls.enabled = true;
+            gsap.to(camera.position, {x:8, y:11, z:25, duration: 1});
+        }
     }
 
     if (e.keyCode == 75
     ) {
-        camera.rotation.set(-1.5 , 0, 0);
-        console.log("hi");
-    }
+        //console.log(camPos);
+        // camera.rotation.set(-1.5 , 0, 0);
+        console.log(camera.position);
+        // console.log(camera.rotation);
+    } 
+}
+
+window.onload = function() {
+
+    gsap.to(camera.position, {x:40, y:22, z:-22, duration: 0});
+    gsap.to(camera.position, {x:25, y:15, z:17, duration: 2.5});
+    gsap.to(camera.position, {x:8, y:11, z:25, duration: 2.5});
+    
+    
 }
 
 //Start the 3D rendering
 animate();
-
