@@ -317,7 +317,7 @@ document.body.onkeyup = function(e) {
             //poster 3
             gsap.to(scene.children[5].children[32].position, {x:-0.054011255502700806, y:1.0971174240112305, z:-1.5894981622695923, duration: 0.5});
             gsap.to(scene.children[5].children[32].rotation, {x:0, y:0, z:0.006877208719303045, duration: 0.5});
-        }else{
+        }else if(!x){
             x=true;
        
             //document.removeEventListener('click', onClick);
