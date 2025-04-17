@@ -90,6 +90,7 @@ if (objToRender === "ramenShop") {
     controls.dampingFactor = 0.2;
     controls.maxPolarAngle = Math.PI*4/9;
     controls.maxDistance = 50;
+    controls.minDistance = 12.5;
 }
 
 let x;
@@ -154,36 +155,34 @@ function onClick(event) {
     else if ((obj == "exit" ||obj == "Text008") && x == false) {
         console.log(obj);
         x=true;
-       //document.removeEventListener('click', onClick);
         controls.enabled = true;
         gsap.to(camera.position, {x:8, y:11, z:25, duration: 1});
     }
     else if (obj == "poster1" && posterSelected == false) {
         posterSelected=true;
         controls.enabled = false;
-        console.log(obj);
-        console.log(scene.children[5].children[32])
         gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
-        gsap.to(scene.children[5].children[32].position, {x:0, y:1, z:-4.5, duration: 1});
-        gsap.to(scene.children[5].children[32].rotation, {x:0, y:0, z:0, duration: 1});
+        gsap.to(scene.children[5].children[30].position, {x:0, y:1, z:-4.5, duration: 1});
+        gsap.to(scene.children[5].children[30].rotation, {x:0, y:0, z:0, duration: 1});
     }
     else if (obj == "poster2" && posterSelected == false) {
         posterSelected=true;
         controls.enabled = false;
-        console.log(obj);
-        console.log(scene.children[5].children[33])
         gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
-        gsap.to(scene.children[5].children[33].position, {x:0, y:1, z:-4.5, duration: 1});
-        gsap.to(scene.children[5].children[33].rotation, {x:0, y:0, z:0, duration: 1});
+        gsap.to(scene.children[5].children[31].position, {x:0, y:1, z:-4.5, duration: 1});
+        gsap.to(scene.children[5].children[31].rotation, {x:0, y:0, z:0, duration: 1});
     }
     else if (obj == "poster3" && posterSelected == false) {
         posterSelected=true;
         controls.enabled = false;
-        console.log(obj);
-        console.log(scene.children[5].children[34])
         gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
-        gsap.to(scene.children[5].children[34].position, {x:0, y:1, z:-4.5, duration: 1});
-        gsap.to(scene.children[5].children[34].rotation, {x:0, y:0, z:0, duration: 1});
+        gsap.to(scene.children[5].children[32].position, {x:0, y:1, z:-4.5, duration: 1});
+        gsap.to(scene.children[5].children[32].rotation, {x:0, y:0, z:0, duration: 1});
+    }
+    else if (obj == "binLid") {
+        console.log(scene.children[5].children[33].rotation)
+        gsap.to(scene.children[5].children[33].rotation, {x:0.5, y:1.5707963267948966, z:0, duration: 0.5, ease: "back.out(0.5)"});
+        gsap.to(scene.children[5].children[33].rotation, {x:0.006, y:1.5707963267948966, z:0, duration: 1, delay: 0.5, ease: "bounce.out"});
     }
 }
 
@@ -198,6 +197,32 @@ function onTouch(event) {
         gsap.to(camera.rotation, {x: -1.5, y: 0, z: 0, duration: 0.5, ease:"none"});
         document.addEventListener('click', onClick);
         controls.enabled = false;
+    }
+    else if (obj == "poster1" && posterSelected == false) {
+        posterSelected=true;
+        controls.enabled = false;
+        gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
+        gsap.to(scene.children[5].children[30].position, {x:0, y:1, z:-4.5, duration: 1});
+        gsap.to(scene.children[5].children[30].rotation, {x:0, y:0, z:0, duration: 1});
+    }
+    else if (obj == "poster2" && posterSelected == false) {
+        posterSelected=true;
+        controls.enabled = false;
+        gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
+        gsap.to(scene.children[5].children[31].position, {x:0, y:1, z:-4.5, duration: 1});
+        gsap.to(scene.children[5].children[31].rotation, {x:0, y:0, z:0, duration: 1});
+    }
+    else if (obj == "poster3" && posterSelected == false) {
+        posterSelected=true;
+        controls.enabled = false;
+        gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
+        gsap.to(scene.children[5].children[32].position, {x:0, y:1, z:-4.5, duration: 1});
+        gsap.to(scene.children[5].children[32].rotation, {x:0, y:0, z:0, duration: 1});
+    }
+    else if (obj == "binLid") {
+        console.log(scene.children[5].children[33].rotation)
+        gsap.to(scene.children[5].children[33].rotation, {x:0.5, y:1.5707963267948966, z:0, duration: 0.5, ease: "back.out(0.5)"});
+        gsap.to(scene.children[5].children[33].rotation, {x:0.006, y:1.5707963267948966, z:0, duration: 1, delay: 0.5, ease: "bounce.out"});
     }
 }
 
@@ -284,14 +309,14 @@ document.body.onkeyup = function(e) {
             controls.enabled = true;
             gsap.to(camera.position, {x:0, y:5, z:-20, duration: 0.5});
             //poster 1
-            gsap.to(scene.children[5].children[32].position, {x:1.4462063312530518, y:1.2948734760284424, z:-1.5894981622695923, duration: 0.5});
-            gsap.to(scene.children[5].children[32].rotation, {x:0, y:0, z:-0.14900684876465822, duration: 0.5});
+            gsap.to(scene.children[5].children[30].position, {x:1.4462063312530518, y:1.2948734760284424, z:-1.5894981622695923, duration: 0.5});
+            gsap.to(scene.children[5].children[30].rotation, {x:0, y:0, z:-0.14900684876465822, duration: 0.5});
             //poster2
-            gsap.to(scene.children[5].children[33].position, {x:0.6585921049118042, y:1.4721720218658447, z:-1.5894981622695923, duration: 0.5});
-            gsap.to(scene.children[5].children[33].rotation, {x:0, y:0, z:0.2617685261862562, duration: 0.5});
+            gsap.to(scene.children[5].children[31].position, {x:0.6585921049118042, y:1.4721720218658447, z:-1.5894981622695923, duration: 0.5});
+            gsap.to(scene.children[5].children[31].rotation, {x:0, y:0, z:0.2617685261862562, duration: 0.5});
             //poster 3
-            gsap.to(scene.children[5].children[34].position, {x:-0.054011255502700806, y:1.0971174240112305, z:-1.5894981622695923, duration: 0.5});
-            gsap.to(scene.children[5].children[34].rotation, {x:0, y:0, z:0.006877208719303045, duration: 0.5});
+            gsap.to(scene.children[5].children[32].position, {x:-0.054011255502700806, y:1.0971174240112305, z:-1.5894981622695923, duration: 0.5});
+            gsap.to(scene.children[5].children[32].rotation, {x:0, y:0, z:0.006877208719303045, duration: 0.5});
         }else{
             x=true;
        
@@ -305,7 +330,7 @@ document.body.onkeyup = function(e) {
     ) {
         //console.log(camPos);
         // camera.rotation.set(-1.5 , 0, 0);
-        console.log(camera.position);
+        console.log(scene.children[5].children);
         // console.log(camera.rotation);
     } 
 }
