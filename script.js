@@ -219,6 +219,20 @@ function onTouch(event) {
         gsap.to(scene.children[5].children[32].position, {x:0, y:1, z:-4.5, duration: 1});
         gsap.to(scene.children[5].children[32].rotation, {x:0, y:0, z:0, duration: 1});
     }
+    else if (posterSelected) {
+        posterSelected = false
+        controls.enabled = true;
+        gsap.to(camera.position, {x:0, y:5, z:-20, duration: 0.5});
+        //poster 1
+        gsap.to(scene.children[5].children[30].position, {x:1.4462063312530518, y:1.2948734760284424, z:-1.5894981622695923, duration: 0.5});
+        gsap.to(scene.children[5].children[30].rotation, {x:0, y:0, z:-0.14900684876465822, duration: 0.5});
+        //poster2
+        gsap.to(scene.children[5].children[31].position, {x:0.6585921049118042, y:1.4721720218658447, z:-1.5894981622695923, duration: 0.5});
+        gsap.to(scene.children[5].children[31].rotation, {x:0, y:0, z:0.2617685261862562, duration: 0.5});
+        //poster 3
+        gsap.to(scene.children[5].children[32].position, {x:-0.054011255502700806, y:1.0971174240112305, z:-1.5894981622695923, duration: 0.5});
+        gsap.to(scene.children[5].children[32].rotation, {x:0, y:0, z:0.006877208719303045, duration: 0.5});
+    }
     else if (obj == "binLid") {
         console.log(scene.children[5].children[33].rotation)
         gsap.to(scene.children[5].children[33].rotation, {x:0.5, y:1.5707963267948966, z:0, duration: 0.5, ease: "back.out(0.5)"});
