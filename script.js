@@ -202,6 +202,7 @@ function onTouch(event) {
         posterSelected=true;
         controls.enabled = false;
         gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
+        gsap.to(camera.rotation, {x:0, y:0, z:0, duration: 0.5});
         gsap.to(scene.children[5].children[30].position, {x:0, y:1, z:-4.5, duration: 1});
         gsap.to(scene.children[5].children[30].rotation, {x:0, y:0, z:0, duration: 1});
     }
@@ -209,6 +210,7 @@ function onTouch(event) {
         posterSelected=true;
         controls.enabled = false;
         gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
+        gsap.to(camera.rotation, {x:0, y:0, z:0, duration: 0.5});
         gsap.to(scene.children[5].children[31].position, {x:0, y:1, z:-4.5, duration: 1});
         gsap.to(scene.children[5].children[31].rotation, {x:0, y:0, z:0, duration: 1});
     }
@@ -216,6 +218,7 @@ function onTouch(event) {
         posterSelected=true;
         controls.enabled = false;
         gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
+        gsap.to(camera.rotation, {x:0, y:0, z:0, duration: 0.5});
         gsap.to(scene.children[5].children[32].position, {x:0, y:1, z:-4.5, duration: 1});
         gsap.to(scene.children[5].children[32].rotation, {x:0, y:0, z:0, duration: 1});
     }
