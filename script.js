@@ -159,23 +159,26 @@ function onClick(event) {
         gsap.to(camera.position, {x:8, y:11, z:25, duration: 1});
     }
     else if (obj == "poster1" && posterSelected == false) {
-        posterSelected=true;
+        posterSelected = true;
         controls.enabled = false;
         gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
+        gsap.to(camera.rotation, {x:0, y:0, z:0, duration: 0.5});
         gsap.to(scene.children[5].children[30].position, {x:0, y:1, z:-4.5, duration: 1});
         gsap.to(scene.children[5].children[30].rotation, {x:0, y:0, z:0, duration: 1});
     }
     else if (obj == "poster2" && posterSelected == false) {
-        posterSelected=true;
+        posterSelected = true;
         controls.enabled = false;
         gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
+        gsap.to(camera.rotation, {x:0, y:0, z:0, duration: 0.5});
         gsap.to(scene.children[5].children[31].position, {x:0, y:1, z:-4.5, duration: 1});
         gsap.to(scene.children[5].children[31].rotation, {x:0, y:0, z:0, duration: 1});
     }
     else if (obj == "poster3" && posterSelected == false) {
-        posterSelected=true;
+        posterSelected = true;
         controls.enabled = false;
         gsap.to(camera.position, {x:0, y:3, z:-16, duration: 0.5});
+        gsap.to(camera.rotation, {x:0, y:0, z:0, duration: 0.5});
         gsap.to(scene.children[5].children[32].position, {x:0, y:1, z:-4.5, duration: 1});
         gsap.to(scene.children[5].children[32].rotation, {x:0, y:0, z:0, duration: 1});
     }
@@ -223,7 +226,7 @@ function onTouch(event) {
         gsap.to(scene.children[5].children[32].rotation, {x:0, y:0, z:0, duration: 1});
     }
     else if (posterSelected) {
-        posterSelected = false
+        setTimeout(() => {posterSelected=false;}, 500); 
         controls.enabled = true;
         gsap.to(camera.position, {x:0, y:5, z:-20, duration: 0.5});
         //poster 1
@@ -321,8 +324,9 @@ document.body.onkeyup = function(e) {
 
     if (e.keyCode == 27 
     ) {
+        console.log("hii")
         if (posterSelected){
-            posterSelected = false
+            setTimeout(() => {posterSelected=false;}, 500); 
             controls.enabled = true;
             gsap.to(camera.position, {x:0, y:5, z:-20, duration: 0.5});
             //poster 1
@@ -347,7 +351,7 @@ document.body.onkeyup = function(e) {
     ) {
         //console.log(camPos);
         // camera.rotation.set(-1.5 , 0, 0);
-        console.log(scene.children[5].children);
+        setTimeout(() => {console.log("hi") }, 1000);
         // console.log(camera.rotation);
     } 
 }
