@@ -11,12 +11,6 @@
         <div class="line1"></div>
         <div class="line2"></div>
     </div>
-    <div class="optionscontainer">
-        <div class="AboutMe" onclick="">About Me</div>
-        <div class="DE" onclick=""> Discovery Education</div>
-        <div class="Woks" onclick=""> Woks for Dinner</div>
-        <div class="Cyber" onclick=""> Cyber threat awareness </div>
-    </div>
     <div class="optionscontainer" id="optionscontainer">
         <div class="AboutMe" onclick="window.location.href='aboutMe.html'">About Me</div>
         <div class="DE" onclick="window.location.href='discoveryEducation.html'"> Discovery Education</div>
@@ -29,10 +23,10 @@
     <script type="module" src="script.js"></script>
 
     <script>
+
         function toggleTransform(element) {
             element.classList.toggle('clicked');
             if (document.getElementById("optionscontainer").style.display == "grid") {
-                console.log("hi");
                 document.getElementById("optionscontainer").style.display = "none";
             }else{
                 document.getElementById("optionscontainer").style.display = "grid";
