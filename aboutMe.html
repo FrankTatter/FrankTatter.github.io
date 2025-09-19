@@ -6,9 +6,19 @@
     <link rel="stylesheet" href="aboutMe.css">
     <title>aboutMe</title>
 </head>
-<body style="overflow-x: clip;">
-    <div class="returnButton"><a href="index.html" style="text-decoration: none;"><p class="returnTxt"><img src="img/arrow.png" alt="" class="arrow">return to the shop</p></a></div>
-    <div class="Container">
+<body>
+    <!-- <div class="returnButton"><a href="index.html" style="text-decoration: none;"><p class="returnTxt"><img src="img/arrow.png" alt="" class="arrow">return to the shop</p></a></div> -->
+    <div class="linecontainer" onclick="toggleTransform(this)">
+        <div class="line1"></div>
+        <div class="line2"></div>
+    </div>
+    <div class="optionscontainer" id="optionscontainer">
+        <div class="Home" onclick="manageURL(this)">Home</div>
+        <div class="DE" onclick="manageURL(this)">Discovery Education</div>
+        <div class="Woks" onclick="manageURL(this)"> Woks for Dinner</div>
+        <div class="Cyber" onclick="manageURL(this)"> Cyber threat awareness </div>
+    </div>
+    <div class="container">
         <div class="left">
             <img src="img/me.jpg" alt="" class="picOfMe">
             <p class="text2">When ever I'm not at my desk (which isn't often) I will most likely be over the stove cooking up a treat, outside roaming the hills with my dog or playing guitar in my room!</p>
@@ -26,19 +36,50 @@
             </div>
         </div>
     </div>
-    <div class="All">
-        <h1 class="about">About</h1>
-        <h1 class="name">Frank Tattam</h1>
-        <img src="img/me.jpg" alt="" class="picOfMe">
-        <p class="opening">Hi, my name is Frank and I am a sixth form student with a passion for all things software! My journey started in early highschool when I inspected the google homepage and change the image to a picture of my friend, pretending to be some kind of hacker. Curious as to what else I could do I spent countless hours learning 3d modeling, graphic design, front and back end development to let my creativity run wild! </p>
-        <div class="tripPhotos">
-            <img src="img/homepagebackground.JPG" alt="" class="meCooking">
-            <img src="img/meWalking.jpg" alt="" class="meWalking">
-            <img src="img/meGuitar.JPG" alt="" class="meGuitar">
-        </div>
-        <p class="text2">When ever I'm not at my desk (which isn't often) I will most likely be over the stove cooking up a treat, outside roaming the hills with my dog or playing guitar in my room!</p>
-        <p class="text3">If you want to find out more about me, grab my cv below !</p>
-        <button class="cvButton">CV</button>
-    </div>
+
+    <script>
+        function manageURL(element){
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const parameterValue = urlParams.get('post');
+            console.log(parameterValue);
+
+            if (parameterValue == "bento") {
+                if (element.classList[0] == "Home"){
+                    window.location.href='index.html?post=bento'
+                }else if (element.classList[0] == "AboutMe"){
+                    window.location.href='aboutMe.html?post=bento'
+                }else if (element.classList[0] == "Woks"){
+                    window.location.href='woksForDinner.html?post=bento'
+                }else if (element.classList[0] == "Cyber"){
+                    window.location.href='cyberThreatAwareness.html?post=bento'
+                }else if (element.classList[0] == "DE"){
+                    window.location.href='discoveryEducation.html?post=bento'
+                }
+            }else{
+                if (element.classList[0] == "Home"){
+                    window.location.href='index.html'
+                }else if (element.classList[0] == "AboutMe"){
+                    window.location.href='aboutMe.html'
+                }else if (element.classList[0] == "Woks"){
+                    window.location.href='woksForDinner.html'
+                }else if (element.classList[0] == "Cyber"){
+                    window.location.href='cyberThreatAwareness.html'
+                }else if (element.classList[0] == "DE"){
+                    window.location.href='discoveryEducation.html'
+                }
+            }
+        }
+
+        function toggleTransform(element) {
+            element.classList.toggle('clicked');
+            if (document.getElementById("optionscontainer").style.display == "grid") {
+                document.getElementById("optionscontainer").style.display = "none";
+            }else{
+                document.getElementById("optionscontainer").style.display = "grid";
+            }          
+        }
+    </script>
 </body>
 </html>
+
