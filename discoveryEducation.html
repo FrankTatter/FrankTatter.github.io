@@ -7,7 +7,17 @@
     <title>discoveryEducation</title>
 </head>
 <body>
-    <div class="returnButton"><a href="index.html" style="text-decoration: none;"><p class="returnTxt"><img src="img/arrow.png" alt="" class="arrow">return to the shop</p></a></div>
+    <!-- <div class="returnButton"><a href="index.html" style="text-decoration: none;"><p class="returnTxt"><img src="img/arrow.png" alt="" class="arrow">return to the shop</p></a></div> -->
+    <div class="linecontainer" onclick="toggleTransform(this)">
+        <div class="line1"></div>
+        <div class="line2"></div>
+    </div>
+    <div class="optionscontainer" id="optionscontainer">
+        <div class="Home" onclick="manageURL(this)">Home</div>
+        <div class="AboutMe" onclick="manageURL(this)">About Me</div>
+        <div class="Woks" onclick="manageURL(this)"> Woks for Dinner</div>
+        <div class="Cyber" onclick="manageURL(this)"> Cyber threat awareness </div>
+    </div>
     <div class="topSection">
         <div class="TS-left">
             <img class="discoveryEducationLogo" src="img/DE.png" alt="">
@@ -55,5 +65,49 @@
         <p class="p2">My next challenge was to create a search feature so users can search for items and spawn them on to the stage. I also had to find a way to acount for miss spellings of words given the app has a target audience of primary school children so I took all the key words form an XML file and sorted them from most to least likely results to try find what the user is looking for.</p>
 
     </div>
+
+    <script>
+
+        function manageURL(element){
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const parameterValue = urlParams.get('post');
+            console.log(parameterValue);
+
+            if (parameterValue == "bento") {
+                if (element.classList[0] == "Home"){
+                    window.location.href='index.html?post=bento'
+                }else if (element.classList[0] == "AboutMe"){
+                    window.location.href='aboutMe.html?post=bento'
+                }else if (element.classList[0] == "Woks"){
+                    window.location.href='woksForDinner.html?post=bento'
+                }else if (element.classList[0] == "Cyber"){
+                    window.location.href='cyberThreatAwareness.html?post=bento'
+                }else if (element.classList[0] == "DE"){
+                    window.location.href='discoveryEducation.html?post=bento'
+                }
+            }else{
+                if (element.classList[0] == "Home"){
+                    window.location.href='index.html'
+                }else if (element.classList[0] == "AboutMe"){
+                    window.location.href='aboutMe.html'
+                }else if (element.classList[0] == "Woks"){
+                    window.location.href='woksForDinner.html'
+                }else if (element.classList[0] == "Cyber"){
+                    window.location.href='cyberThreatAwareness.html'
+                }else if (element.classList[0] == "DE"){
+                    window.location.href='discoveryEducation.html'
+                }
+            }
+        }
+        function toggleTransform(element) {
+            element.classList.toggle('clicked');
+            if (document.getElementById("optionscontainer").style.display == "grid") {
+                document.getElementById("optionscontainer").style.display = "none";
+            }else{
+                document.getElementById("optionscontainer").style.display = "grid";
+            }          
+        }
+    </script>
 </body>
 </html>
