@@ -2,6 +2,10 @@
     font-family: Modernist;
     src: url(font/Regular_Weight_Desktop/Sk-Modernist-Regular.otf);
 }
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 html{
     font-family: Modernist;
     background-color: #fefcf5;
@@ -181,4 +185,70 @@ html{
         width: 50%;
         font-size: 1.25rem;
     }
+}
+.linecontainer{
+    height: 40px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 30px;
+    transition: 1s;
+}
+.line1{
+    width: 60px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: black;
+    transform-origin: left;
+    transition: 1s;
+}
+.line2{
+    margin-top: 20px;
+    width: 60px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: black;
+    transform-origin: left;
+    transition: 1s;
+}
+.optionscontainer{
+    width: 1000px;
+    position: absolute;
+    display: none;
+    margin-top: 80px;
+    margin-left: 30px;
+    gap: 20px;
+    grid-auto-flow: row;
+    font-family: Modernist;
+    color: white;
+    font-size: 30px;
+    transition: ease-in-out;
+    animation: fadeIn 2s;
+}
+.linecontainer.clicked{
+    .line1 {transform: rotate(45deg);}
+    .line2 {transform: translateY(17px) rotate(-45deg);}
+}
+.Home{
+    width: fit-content;
+    padding: 2px;
+    border-radius: 10px;
+    background-color: rgba(66, 66, 66, 0.781);
+}
+.AboutMe{
+    width: fit-content;
+    padding: 2px;
+    border-radius: 10px;
+    background-color: rgba(66, 66, 66, 0.781);
+}
+.DE{
+    width: fit-content;
+    padding: 2px;
+    border-radius: 10px;
+    background-color: rgba(66, 66, 66, 0.781);
+}
+.Woks{
+    width: fit-content;
+    padding: 2px;
+    border-radius: 10px;
+    background-color: rgba(66, 66, 66, 0.781);
 }
