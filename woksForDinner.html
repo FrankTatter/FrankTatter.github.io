@@ -7,7 +7,17 @@
     <title>woksForDinner</title>
 </head>
 <body>
-    <div class="returnButton"><a href="index.html" style="text-decoration: none;"><p class="returnTxt"><img src="img/arrow.png" alt="" class="arrow">return to the shop</p></a></div>
+    <!-- <div class="returnButton"><a href="index.html" style="text-decoration: none;"><p class="returnTxt"><img src="img/arrow.png" alt="" class="arrow">return to the shop</p></a></div> -->
+    <div class="linecontainer" onclick="toggleTransform(this)">
+        <div class="line1"></div>
+        <div class="line2"></div>
+    </div>
+    <div class="optionscontainer" id="optionscontainer">
+        <div class="Home" onclick="manageURL(this)">Home</div>
+        <div class="AboutMe" onclick="manageURL(this)">About Me</div>
+        <div class="DE" onclick="manageURL(this)"> Discovery Education</div>
+        <div class="Cyber" onclick="manageURL(this)"> Cyber threat awareness </div>
+    </div>
     <div class="topSection">
         <div class="TS-left">
             <img class="woksForDinnerLogo" src="img/wokLogo2.svg" alt="">
@@ -67,5 +77,49 @@
         <a href="https://www.tiktok.com/@woksfordinner"><img class="TikTok" src="img/TikTok.png" alt=""></a>
         <p class="p5">To further build on this project, I made a TikTok and an Instagram to try build a reputation for the brand and to show people what Woks For Dinner is all about.</p>
     </div>
+
+    <script>
+        function manageURL(element){
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const parameterValue = urlParams.get('post');
+            console.log(parameterValue);
+
+            if (parameterValue == "bento") {
+                if (element.classList[0] == "Home"){
+                    window.location.href='index.html?post=bento'
+                }else if (element.classList[0] == "AboutMe"){
+                    window.location.href='aboutMe.html?post=bento'
+                }else if (element.classList[0] == "Woks"){
+                    window.location.href='woksForDinner.html?post=bento'
+                }else if (element.classList[0] == "Cyber"){
+                    window.location.href='cyberThreatAwareness.html?post=bento'
+                }else if (element.classList[0] == "DE"){
+                    window.location.href='discoveryEducation.html?post=bento'
+                }
+            }else{
+                if (element.classList[0] == "Home"){
+                    window.location.href='index.html'
+                }else if (element.classList[0] == "AboutMe"){
+                    window.location.href='aboutMe.html'
+                }else if (element.classList[0] == "Woks"){
+                    window.location.href='woksForDinner.html'
+                }else if (element.classList[0] == "Cyber"){
+                    window.location.href='cyberThreatAwareness.html'
+                }else if (element.classList[0] == "DE"){
+                    window.location.href='discoveryEducation.html'
+                }
+            }
+        }
+
+        function toggleTransform(element) {
+            element.classList.toggle('clicked');
+            if (document.getElementById("optionscontainer").style.display == "grid") {
+                document.getElementById("optionscontainer").style.display = "none";
+            }else{
+                document.getElementById("optionscontainer").style.display = "grid";
+            }          
+        }
+    </script>
 </body>
 </html>
