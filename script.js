@@ -143,23 +143,19 @@ function onClick(event) {
     // false for not mobile device
     if ((obj == "wokLogo003_1" ||obj == "woksForDinner001" ||obj == "woksForDinner002"||obj == "woksForDinner003"||obj == "wokLogo003") && x == false) {
         console.log(obj);
-        newUrl = "https://franktatter.github.io/woksForDinner.html"
-        window.location.replace(newUrl);
+        window.location.href='woksForDinner.html?post=bento'
     }
     else if ((obj == "Text006" ||obj == "Text018" ||obj == "Text017"||obj == "cyberThreatAwareness") && x == false) {
         console.log(obj);
-        newUrl = "https://franktatter.github.io/cyberThreatAwareness.html"
-        window.location.replace(newUrl);
+        window.location.href='cyberThreatAwareness.html?post=bento'
     }
     else if ((obj == "discoveryEducation" ||obj == "Text005" ||obj == "Text016"||obj == "Text014") && x == false) {
         console.log(obj);
-        newUrl = "https://franktatter.github.io/discoveryEducation.html"
-        window.location.replace(newUrl);
+        window.location.href='discoveryEducation.html?post=bento'
     }
     else if ((obj == "aboutMe" ||obj == "Text") && x == false) {
         console.log(obj);
-        newUrl = "https://franktatter.github.io/aboutMe.html"
-        window.location.replace(newUrl);
+       window.location.href='aboutMe.html?post=bento'
     }
     else if ((obj == "exit" ||obj == "Text008") && x == false) {
         console.log(obj);
@@ -364,11 +360,21 @@ document.body.onkeyup = function(e) {
 
 window.onload = function() {
 
-    gsap.to(camera.position, {x:40, y:22, z:-22, duration: 0});
-    gsap.to(camera.position, {x:25, y:15, z:17, duration: 2.5});
-    gsap.to(camera.position, {x:8, y:11, z:25, duration: 2.5});
-    
-    
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const parameterValue = urlParams.get('post');
+
+    if (parameterValue == "bento") {
+        x=false;
+        gsap.to(camera.position, {x:2.05, y:3.3, z:5.3, duration: 0.5});
+        gsap.to(camera.rotation, {x: -1.5, y: 0, z: 0, duration: 0.5, ease:"none"});
+        document.addEventListener('click', onClick);
+        controls.enabled = false;
+    }else{
+        gsap.to(camera.position, {x:40, y:22, z:-22, duration: 0});
+        gsap.to(camera.position, {x:25, y:15, z:17, duration: 2.5});
+        gsap.to(camera.position, {x:8, y:11, z:25, duration: 2.5});
+    }
 }
 
 //Start the 3D rendering
