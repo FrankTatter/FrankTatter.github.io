@@ -188,8 +188,8 @@ function onClick(event) {
         gsap.to(scene.children[5].children[36].rotation, {x:0, y:0, z:0, duration: 1});
     }
     else if (obj == "binLid" || obj == "bin") {
-        gsap.to(scene.children[5].children[25].rotation, {x:0.5, y:1.5707963267948966, z:0, duration: 0.5, ease: "back.out(0.5)"});
-        gsap.to(scene.children[5].children[25].rotation, {x:0.006, y:1.5707963267948966, z:0, duration: 1, delay: 0.5, ease: "bounce.out"});
+        gsap.to(scene.children[5].children[26].rotation, {x:0.5, y:1.5707963267948966, z:0, duration: 0.5, ease: "back.out(0.5)"});
+        gsap.to(scene.children[5].children[26].rotation, {x:0.006, y:1.5707963267948966, z:0, duration: 1, delay: 0.5, ease: "bounce.out"});
     }
 }
 
@@ -244,8 +244,8 @@ function onTouch(event) {
         gsap.to(scene.children[5].children[36].rotation, {x:0, y:0, z:0.006877208719303045, duration: 0.5});
     }
     else if (obj == "binLid" || obj == "bin") {
-        gsap.to(scene.children[5].children[25].rotation, {x:0.5, y:1.5707963267948966, z:0, duration: 0.5, ease: "back.out(0.5)"});
-        gsap.to(scene.children[5].children[25].rotation, {x:0.006, y:1.5707963267948966, z:0, duration: 1, delay: 0.5, ease: "bounce.out"});
+        gsap.to(scene.children[5].children[26].rotation, {x:0.5, y:1.5707963267948966, z:0, duration: 0.5, ease: "back.out(0.5)"});
+        gsap.to(scene.children[5].children[26].rotation, {x:0.006, y:1.5707963267948966, z:0, duration: 1, delay: 0.5, ease: "bounce.out"});
     }
 }
 
@@ -379,3 +379,4 @@ window.onload = function() {
 
 //Start the 3D rendering
 animate();
+
